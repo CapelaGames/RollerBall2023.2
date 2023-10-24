@@ -83,6 +83,9 @@ void ARollerBallPlayer::OnHit(UPrimitiveComponent* HitComponent,
 	AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse,
 	const FHitResult& Hit )
 {
+	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Orange,
+		TEXT("On Hit"));
+	
 	float HitDirection = Hit.Normal.Z;
 
 	if(HitDirection > 0)
